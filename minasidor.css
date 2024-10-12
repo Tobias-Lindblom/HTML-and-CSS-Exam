@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --clr-green: #0a846E;
+    --clr-bg: #e0e0e0;
+    --clr-red: #B93857; 
+    --clr-headerbrown: #9E6D52;
+    --clr-text: #ffff;
+}
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: var(--clr-bg);
+}
+
+.hamburger__meny {
+    display: none;
+}
+
+@media (max-width: 390px) {
+    .hamburger__meny {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        left: 340px;
+    }
+
+    .hamburger__meny a {
+        text-decoration: none;
+        color: var(--clr-text);
+    }
+}
+
+
+.btn-green {
+    color: var(--clr-text);
+    font-weight: 600;
+    background-color: var(--clr-green);
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-red {
+    color: var(--clr-text);
+    font-weight: 400;
+    background-color: var(--clr-red);
+    padding: 3px 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: var(--clr-text);
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0,0.25);
+}
+
+nav a {
+    color: var(--clr-green);
+    font-weight: 600;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 390px) {
+    nav {
+        display: none;
+    }
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "img img";
+
+
+    img {
+        grid-area: img;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .header__svg {
+        width: 200px;
+        height: auto;
+        margin: auto auto;
+    }
+
+    h2 {
+        color: var(--clr-text);
+        position: absolute;
+        top: 320px;
+        left: 890px;
+        right: 500px;
+    }
+}
+
+@media (max-width: 390px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "img img";
+
+
+        img {
+            grid-area: img;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .header__svg {
+            width: 200px;
+            height: auto;
+            margin: auto auto;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--clr-text);
+            width: 50%;
+            position: absolute;
+            top: 270px;
+            left: 135px;
+            right: 500px;
+        }
+    }
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    background: #ffff;
+    padding: 30px 0 0 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0,0.25);
+
+    .main__content_first {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        button {
+            margin-top: 10px;
+        }
+    }
+
+    .main__content-second  {
+        display: grid;
+        
+        h2 {
+            margin: 0 auto;
+            margin-top: 80px;
+           
+        }
+    
+        .card { 
+            position: relative;
+            background: #ffff;
+            width: 250px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0,0.25);
+        }
+
+        .card-svg {
+            position: absolute;
+            margin: 0 auto;
+            padding: 5px;
+            max-width: 60%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    
+        .card__content {
+            display: grid;
+            gap: 30px;
+            padding: 10px;
+            align-items:first baseline;
+            grid-template-columns: 1fr 1fr;
+    
+            grid-template-areas:
+            "title date"
+            "user delete";
+        }
+    
+        .card__title {
+            grid-area: title;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: left;
+        }
+    
+        .card__date {
+            grid-area: date;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: right;
+        }
+    
+        .card__user {
+            grid-area: user;
+            font-size: 0.75rem;
+        }
+    
+        .card__content button {
+            grid-area: delete;
+        }
+    
+        .card img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .btn-redtrash {
+            display: none;
+        }
+    }
+
+    @media (max-width: 390px) {
+        .main__content-second  {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+            h2 {
+                margin-top: 80px;
+            }
+    
+            .card { 
+                position: relative;
+                background: #ffff;
+                width: 250px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0,0.25);
+            }
+
+            .card-svg {
+                position: absolute;
+                margin: 0 auto;
+                padding: 5px;
+                max-width: 60%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+    
+            .card__content {
+                display: grid;
+                gap: 30px;
+                padding: 10px;
+                align-items:first baseline;
+                grid-template-columns: 1fr 1fr;
+        
+                grid-template-areas:
+                "title date"
+                "user delete";
+            }
+    
+            .card__title {
+                grid-area: title;
+                font-size: 1.2rem;
+                font-weight: 600;
+                text-align: left;
+            }
+    
+            .card__date {
+                grid-area: date;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-align: right;
+            }
+        
+            .card__user {
+                grid-area: user;
+                font-size: 0.75rem;
+            }
+        
+            .card__content button {
+                grid-area: delete;
+            }
+    
+            .card img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .btn-red {
+                display: none;
+            }
+
+            .btn-redtrash {
+                display:contents;
+                text-align: right;
+                color: var(--clr-red);
+            }
+        }
+    
+    }
+
+    .main__content-third {
+        
+        .gallery {
+        display: flex;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 30px;
+        }
+        
+            h2 {
+                text-align: center;
+                margin-top: 80px;
+            }
+    
+        .card { 
+            position: relative;
+            background: #ffff;
+            width: 250px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0,0.25);
+        }
+
+        .card-svg {
+            position: absolute;
+            margin: 0 auto;
+            padding: 5px;
+            max-width: 60%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .card__content {
+            display: grid;
+            gap: 30px;
+            padding: 10px;
+            align-items:first baseline;
+            grid-template-columns: 1fr 1fr;
+    
+            grid-template-areas:
+            "title date"
+            "user delete";
+        }
+    
+        .card__title {
+            grid-area: title;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: left;
+        }
+    
+        .card__date {
+            grid-area: date;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: right;
+        }
+    
+        .card__user {
+            grid-area: user;
+            font-size: 0.75rem;
+        }
+    
+        .card__content button {
+            grid-area: delete;
+        }
+    
+        .card img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .btn-redtrash {
+            display: none;
+        }
+    }
+
+    @media (max-width: 390px) {
+        .main__content-third {
+            
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            h2 {
+               text-align: center;
+                margin-top: 80px;
+            }
+        
+            .card { 
+                position: relative;
+                background: #ffff;
+                width: 250px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0,0.25);
+            }
+    
+            .card-svg {
+                position: absolute;
+                margin: 0 auto;
+                padding: 5px;
+                max-width: 60%;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+    
+            .card__content {
+                display: grid;
+                gap: 30px;
+                padding: 10px;
+                align-items:first baseline;
+                grid-template-columns: 1fr 1fr;
+        
+                grid-template-areas:
+                "title date"
+                "user delete";
+            }
+        
+            .card__title {
+                grid-area: title;
+                font-size: 1.2rem;
+                font-weight: 600;
+                text-align: left;
+            }
+        
+            .card__date {
+                grid-area: date;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-align: right;
+            }
+        
+            .card__user {
+                grid-area: user;
+                font-size: 0.75rem;
+            }
+        
+            .card__content button {
+                grid-area: delete;
+            }
+        
+            .card img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+            }
+    
+            .btn-red {
+                display: none;
+            }
+    
+            .btn-redtrash {
+                display: contents;
+                text-align: right;
+                color: var(--clr-red);
+            }
+        }
+    }
+}
+
+
+
+
+footer {
+
+    display: grid;
+    background: var(--clr-headerbrown);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "img img img img"
+    "button button button button";
+
+    .footer__gallery {
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+
+    }
+
+    img {
+        grid-area: img;
+        max-width: 100%;
+        height: 300px;
+        padding: 25px;
+        object-fit: cover;
+    }
+
+    a, button {
+        grid-area: button;
+        background: #ffff;
+        padding: 5px;
+        border: none;
+        font-size: 1.3rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 390px) {
+    footer {
+
+       display: flex;
+       flex-direction: column;
+       flex-wrap: wrap;
+    
+        .footer__gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+    
+        }
+    
+        img {
+            grid-area: img;
+            max-width: 50%;
+            padding: 20px;
+            height: 250px;
+            object-fit: cover;
+        }
+    
+        a, button {
+            grid-area: button;
+            background: #ffff;
+            padding: 5px;
+            border: none;
+            font-size: 1.3rem;
+            width: 100%;
+        }
+    }
+}
+
